@@ -319,6 +319,7 @@ async def get_models(url_idx: Optional[int] = None, user=Depends(get_current_use
 
         try:
             r = requests.request(method="GET", url=f"{url}/models", headers=headers)
+            print("r =====>", r)
             r.raise_for_status()
 
             response_data = r.json()

@@ -14,6 +14,7 @@ export const getOpenAIConfig = async (token: string = '') => {
 		}
 	})
 		.then(async (res) => {
+			console.log('getOpenAIConfig res =====>', res);
 			if (!res.ok) throw await res.json();
 			return res.json();
 		})
@@ -218,6 +219,9 @@ export const getOpenAIModels = async (token: string, urlIdx?: number) => {
 		}
 	)
 		.then(async (res) => {
+			console.log('const =====>', `${OPENAI_API_BASE_URL}/models${typeof urlIdx === 'number' ? `/${urlIdx}` : ''}`);
+			console.log('OPENAI_API_BASE_URL =====>', OPENAI_API_BASE_URL);
+			console.log('res =====>', res);
 			if (!res.ok) throw await res.json();
 			return res.json();
 		})
