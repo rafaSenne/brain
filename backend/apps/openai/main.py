@@ -318,8 +318,13 @@ async def get_models(url_idx: Optional[int] = None, user=Depends(get_current_use
         r = None
 
         try:
-            r = requests.request(method="GET", url=f"{url}/models", headers=headers)
-            print("r =====>", r)
+
+            if "azure" in url:
+                headers["Ocp-Apim-Subscriptions-Key"] = key
+                r = requests.request(method="GET", url=f"{url}/openai/models?api-version=2023-03-15-preview", headers=headers)
+
+            else:
+                r = requests.request(method="GET", url=f"{url}/models", headers=headers)
             r.raise_for_status()
 
             response_data = r.json()

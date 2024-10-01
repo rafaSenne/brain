@@ -50,10 +50,10 @@
 	},
 	"openai": {
 		"api_base_urls": [
-			"https://open-ai-hml.openai.azure.safra.com"
+			"https://open-ai-hml.openai.azure.com"
 		],
 		"api_keys": [
-			"3fa004bc77944da58806e4717699fb67"
+			"d405c6367735413284985ed06f1bd07c"
 		],
 		"enable": true
 	},
